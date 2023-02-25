@@ -41,7 +41,8 @@ router.get('/category', (req ,res) => {
 
 router.get('/category/:category', (req ,res) => {
     pool.query(`SELECT film.film_id, film.title, category.category_id, category.name
-    FROM film_category JOIN film ON film.film_id = film_category.film_id
+    FROM film_category 
+    JOIN film ON film.film_id = film_category.film_id
     JOIN category ON category.category_id = film_category.category_id
     WHERE category.category_id = ${req.params.category}`, (error, result) => {
         if(error){

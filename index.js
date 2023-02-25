@@ -6,7 +6,6 @@ const pool = require('./query.js');
 
 
 app.use('/', route);
-// app.use('/film', route);
 
 
 pool.connect((err,res)=>{
